@@ -6,7 +6,6 @@ namespace App\Config;
 use Framework\App;
 use App\Controllers\{AboutController, HomeController, AuthController};
 
-~≠
 function registerRoutes(App $app)
 {
     $app->get('/about', [AboutController::class, 'about']);
