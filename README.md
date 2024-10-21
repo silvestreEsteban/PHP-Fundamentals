@@ -6,3 +6,5 @@
 <p>The first phase of the application is building a framework to help the user understand what is actually going on behind the scenes when using existing frameworks such as Laravel or Symfony.</p>
 
 <p>The second stage of the application is building a payment authentication service, and a payment tracking application.</p>
+
+https://www.udemy.com/course/complete-modern-php-developer
