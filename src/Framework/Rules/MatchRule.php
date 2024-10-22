@@ -15,8 +15,9 @@ class MatchRule implements RuleInterface
 
         return $fieldOne === $fieldTwo;
     }
+
     public function getMessage(array $data, string $field, array $params): string
     {
-        return "Does not match $params[0] field";
+        return "Does not match {$params[0]} field";
     }
 }

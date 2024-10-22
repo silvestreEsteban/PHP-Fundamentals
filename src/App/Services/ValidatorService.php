@@ -30,16 +30,16 @@ public function __construct()
     $this->validator->add('match', new MatchRule());
 }
 
-public function validateRegister(array $formData)
-{
-    $this->validator->validate($formData, [
-        'email' => ['required', 'email'],
-        'age' => ['required', 'min:18'],
-        'country' => ['required', 'in:USA,Canada,Mexico'],
-        'socialMediaURL' => ['required', 'url'],
-        'password' => ['required'],
-        'confirmPassword' => ['required', 'match:password'],
-        'tos' => ['required']
-    ]);
-}
+    public function validateRegister(array $formData)
+    {
+        $this->validator->validate($formData, [
+            'email' => ['required', 'email'],
+            'age' => ['required', 'min:18'],
+            'country' => ['required', 'in:USA,Canada,Mexico'],
+            'socialMediaURL' => ['required', 'url'],
+            'password' => ['required'],
+            'confirmPassword' => ['required', 'match:password'],
+            'tos' => ['required']
+        ]);
+    }
 }

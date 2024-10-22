@@ -10,3 +10,5 @@ CREATE TABLE IF NOT EXISTS users(
     PRIMARY KEY(id),
     UNIQUE KEY(email)
 );
+
+INSERT INTO users (email,password,age,country,social_media_url) VALUES ('test@test.com', 'shoto', 21, 'USA', 'www.twitter.com');

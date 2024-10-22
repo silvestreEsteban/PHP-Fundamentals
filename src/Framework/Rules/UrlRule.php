@@ -12,8 +12,9 @@ class UrlRule implements RuleInterface
     {
         return (bool) filter_var($data[$field], FILTER_VALIDATE_URL);
     }
+
     public function getMessage(array $data, string $field, array $params): string
     {
-        return "Invalid Url";
+        return "Invalid URL";
     }
 }
