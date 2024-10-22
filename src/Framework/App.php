@@ -29,7 +29,11 @@ public function get(string $path, array $controller): App
     $this->router->add('GET', $path, $controller);
     return $this;
 }
-
+public function post(string $path, array $controller): App
+{
+    $this->router->add('POST', $path, $controller);
+    return $this;
+}
 public function addMiddleware(string $middleware){
     $this->router->addMiddleware($middleware);
 }

@@ -49,7 +49,7 @@ class Router
             $action();
             return;
         }
-        throw new \Exception("Route not found");
+
 
     }
 
