@@ -21,7 +21,6 @@ private Validator $validator;
 public function __construct()
 {
     $this->validator = new Validator();
-
     $this->validator->add('required', new RequiredRule());
     $this->validator->add('email', new EmailRule());
     $this->validator->add('min', new MinRule());
@@ -40,6 +39,14 @@ public function __construct()
             'password' => ['required'],
             'confirmPassword' => ['required', 'match:password'],
             'tos' => ['required']
+        ]);
+    }
+
+    public function validateLogin(array $formData)
+    {
+        $this->validator->validate($formData, [
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
     }
 }
