@@ -11,4 +11,32 @@ CREATE TABLE IF NOT EXISTS users(
     UNIQUE KEY(email)
 );
 
-INSERT INTO users (email,password,age,country,social_media_url) VALUES ('test@test.com', 'shoto', 21, 'USA', 'www.twitter.com');
+CREATE TABLE IF NOT EXISTS transactions(
+    id bigint(20) NOT NULL AUTO_INCREMENT,
+    description varchar(255) NOT NULL,
+    amount decimal(10,2) NOT NULL,
+    date datetime NOT NULL,
+    created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    updated_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    user_id bigint(20) unsigned NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
+
+
+CREATE TABLE IF NOT EXISTS receipts(
+    id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+    original_filename varchar(255) NOT NULL,
+    storage_filename varchar(255) NOT NULL,
+    media_type varchar(255) NOT NULL,
+    transaction_id bigint(20) UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(transaction_id) REFERENCES transactions (id) ON DELETE CASCADE
+);
+
+
+
+
+
+
+

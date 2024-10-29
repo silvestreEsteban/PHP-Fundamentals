@@ -32,5 +32,6 @@ class SessionMiddleware implements MiddlewareInterface
         $next();
 
         session_write_close();
+        ob_end_flush();
     }
 }
